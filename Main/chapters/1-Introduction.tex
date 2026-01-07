@@ -24,7 +24,7 @@
 
 I denne laben får dere ikke utlevert noen \verb|.c| eller \verb|.h|-filer. Dere skal arbeide i Sysmac Studio, som dere finner på Windows-partisjonen på Sanntids-PCene. Dere får heller ingen utdelte .smc2-filer, som er filformatet som Sysmac støtter, men dere skal lage et nytt slikt program fra start. Hvordan dette gjøres vil vi vise dere gjennom denne lab-teksten.
 
-\section{Introduksjon - Praktisk rundt labben}
+\section{Introduksjon - Praktisk rundt laben}
 
 
 PLS (programmerbar logisk styringsenhet) er et utbredt verktøy for å løse automatiseringsoppgaver i industrien. En PLS er en forholdsvis enkel innretning, som består av en prosessor, digitale- og/eller analoge innganger og utganger, og eventuelt også en eller flere kommunikasjonsgrensesnitt.
@@ -40,7 +40,7 @@ PLS-laben gir dere en introduksjon til programmering av Omron NX102-9000 i Sysma
 
 Den første delen av laboppgaven er strukturert som en guide for å få dere kjapt inn i programmering av Omron NX102-9000 gjennom Sysmac. Deretter skal dere programmere en noe forenklet versjon av heislogikken fra heislaben som dere skal begynne med i neste uke. PLS-laben er obligatorisk, og dere skal kun bruke én labøkt på dette.
 
-\section{Introduksjon - Heisen på Sanntidslabben}\label{sec:1-intro}
+\section{Introduksjon - Heisen på Sanntidslaben}\label{sec:1-intro}
 I figur \ref{fig:omron-pls} ser dere PLSen brukt på Sanntidssalen. Dette er en modulbasert PLS, som betyr at PLSens funksjonaliteter kan utvides ved behov, ved å legge til ekstra moduler. Det er faktisk bare den venstre delen av "klossen", altså den markert med Omron NX1 og NX102-9000 som er selve PLSen. Den første klossen til høyre etter dette er strømforsyning, og de andre er moduler som kan gjøre Input/Output. 
 
 \begin{figure}[ht]
@@ -62,7 +62,7 @@ I tillegg til dette finner dere vår kjære, vakre heismodell på pulten deres (
 
 \subsection{Heismodellen}
 
-Denne heismodellen består av en sjakt og en bevegelig heisstol. Det er denne vi skal få til å bevege seg i labopplegget. Over øverste etasje, og under nederste etasje er det montert endestoppbrytere, som vil kutte motorpådraget dersom heisen kjører utenfor sitt lovlige område. Dette er for å beskytte heisens motor mot skade. Om heisen skulle treffe en av endestoppene, må heisstolen manuelt skyves bort fra bryterne før man kan be motoren om et nytt pådrag. Dette er en beskyttelsemekanisme i hardware og skal ikke inngå i selve styresystemet som skal bli utviklet i denne labben.
+Denne heismodellen består av en sjakt og en bevegelig heisstol. Det er denne vi skal få til å bevege seg i labopplegget. Over øverste etasje, og under nederste etasje er det montert endestoppbrytere, som vil kutte motorpådraget dersom heisen kjører utenfor sitt lovlige område. Dette er for å beskytte heisens motor mot skade. Om heisen skulle treffe en av endestoppene, må heisstolen manuelt skyves bort fra bryterne før man kan be motoren om et nytt pådrag. Dette er en beskyttelsemekanisme i hardware og skal ikke inngå i selve styresystemet som skal bli utviklet i denne laben.
 
 
 
@@ -71,7 +71,7 @@ Heisens pådrag kommer fra en motorstyringsenhet, den store svarte boksen som st
 
 
 \subsection{Betjeningsboks}
-Til slutt har dere en "betjeningsboks". Øverst på betjeningsboksen finnes en bryter som velger om datamaskinen eller PLSen skal styre heismodellen. Denne skal stå i "\verb|PLS|" gjennom hele labben.
+Til slutt har dere en "betjeningsboks". Øverst på betjeningsboksen finnes en bryter som velger om datamaskinen eller PLSen skal styre heismodellen. Denne skal stå i "\verb|PLS|" gjennom hele laben.
 
 
 
@@ -208,7 +208,7 @@ Heispanelet derimot, finner man på kortsiden av betjeningsboksen og representer
 
 
 \end{tikzpicture}}
-    \caption{Etasje- og Heispanel i Sanntidslabben}
+    \caption{Etasje- og Heispanel i Sanntidslaben}
     \label{fig:paneler}
 \end{figure}
 
@@ -222,7 +222,7 @@ Måten man programmerer PLSer på er standarisert og følger en industristandard
     \item \verb|Stigediagram (LD)|, eller "Ladder diagram": er et grafisk programmeringsspråk, hvor man lager linjer som representerer programflyt, hvor linjene kan ha brytere som representerer kontrollstrukturer.
     
     \item \verb|Funksjonsblokkdiagram (FBD)|: er også et grafisk programmeringsspråk, men her trekker man koblinger mellom utgangen på blokker inn i inngangene til andre blokker. 
-    \item \verb|Strukturerert tekst (ST)|: er et programmeringsspråk som faktisk bruker tekjst - som navnet tilsier. Det ligner på et språk som heter "PASCAL".
+    \item \verb|Strukturerert tekst (ST)|: er et programmeringsspråk som faktisk bruker tekst - som navnet tilsier. Det ligner på et språk som heter "PASCAL".
     
     \item \verb|Sekvensielle funksjonsdiagram (SFC)| eller "Sequential function chart": er nok et grafisk programmeringsspråk, men har i tillegg noen elementer for å kunne blande sekvensielle operasjoner med parallelle operasjoner.
 \end{itemize}
